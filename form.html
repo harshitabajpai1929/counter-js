@@ -17,71 +17,81 @@
     font-size: 20px;
     background-color: lightgreen;
     }
-    </style>
-     
+    p{
+        background-color: yellow;
+    }
+    </style> 
      <script>
      function verify(){
-             var no;
-             var wt;
-             no= parseInt(document.getElementById('age').value);
-             wt= parseInt(document.getElementById('weight').value);
-             console.log("Value of no: "+no);
-             if ((no >= 5 && no <=7 ) && (wt >=15 && wt <=20))
-             alert("under recommended range")
-             else if ((no >= 5 && no <=7 ) && (wt > 20))
-             alert("over weight")
-             else 
-             alert("under weight")
-
-             if ((no >= 8 && no <= 10) && (wt >= 21 && wt <= 25))
-             alert("under recommended range")
-             else if ((no >= 8 && no <=10 ) && (wt > 25))
-             alert("over weight")
-             else 
-             alert("under weight")
-
-             if ((no >= 11 && no <= 15 ) && (wt >= 26 && wt <= 30))
-             alert("under recommended range")
-             else if ((no >= 11 && no <= 15 ) && (wt >  30))
-             alert("over weight")
-             else 
-             alert("under weight")
-
-             if ((no >= 16 && no <= 20 ) && (wt >= 31 && wt <= 40))
-             alert("under recommended range")
-             else if ((no >= 16 && no <= 20 ) && (wt > 40))
-             alert("over weight")
-             else 
-             alert("under weight")
-
-            }      
-
+            var no= parseInt(document.getElementById('age').value);
+            var wt= parseInt(document.getElementById('weight').value); 
+            if(no >=5 && no <= 7){
+            if (wt >=15 && wt <=20){
+              document.getElementById('output').innerHTML = "recommended range";
+            }
+            else if(wt > 20){
+            document.getElementById('output').innerHTML = "over weight";
+            }
+            }
+             else {
+             document.getElementById('output').innerHTML = "under weight";
+            }
+             if(no >= 8 && no <= 10){
+             if(wt >= 21 && wt <= 25)
+             document.getElementById('output').innerHTML = "recommended range";
+             else if(wt > 25)
+             document.getElementById('output').innerHTML = "over weight";
+             }
+             else
+             document.getElementById('output').innerHTML = "under weight";
+            
+            
+             if(no >= 11 && no <= 15 ){
+             if(wt >= 26 && wt <= 30){
+             document.getElementById('output').innerHTML = "recommend range";
+             }
+             else if(wt >  30){
+             document.getElementById('output').innerHTML = "over weight";
+             }
+            }
+             else {
+             document.getElementById('output').innerHTML = "under weight";
+            }
+             
+             if (no >= 16 && no <= 20 ){ 
+             if (wt >= 31 && wt <= 40)
+             document.getElementById('output').innerHTML = "recommended range";
+             else if(wt > 40)
+             document.getElementById('output').innerHTML = "over weight";
+             }
+             else {
+             document.getElementById('output').innerHTML = "under weight";
+             }
+            } 
      </script>
 </head>
 <body>
     <h1> form</h1>
 <div>
-    <!-- <form > -->
-    <label for="fname">first name</label>
+    <label for="fname">first name:</label>
     <input type="text" id="fname" name="firstname" placeholder="enter first name">
     <br>
     <br>
-    <label for="lname">last name</label>
+    <label for="lname">last name:</label>
     <input type="text" id="fname" name="lastname" placeholder="enter last name">
     <br>
     <br>
-    <label for="age">age</label>
-    <input type="number" id="age" name="age" placeholder="enter your age">
-    <br>
-    <!-- <button onclick="verify()">verified</button> -->
+    <label for="age">age:</label>
+    <input type="number" style="margin-left: 40px;" id="age" name="age" placeholder="enter your age">
     <br>
     <br>
-    <label for="weight">weight</label>
+    <br>
+    <label for="weight">weight:</label>
     <input type="number" id="weight" name="weight" placeholder="enter your weight">
     <br>
     <br>
-    <button onclick="verify()"type="submit" value="submit">submit</button>
-    <!-- </form> -->
+    <button onclick="verify()"type="submit" value="submit">submit</button> 
+    <p id="output"></p>
 </div>
 </body>
 </html>
